@@ -151,15 +151,28 @@ public class cetak_Hasil extends javax.swing.JFrame {
 //        
 //        lb_hasil.setText("Rp."+String.valueOf(untung));
         
-        if(panen < 653)
+        if(panen < 653){
             lb_hasil.setText("tidak memenuhi Syarat");
-        else if("--->Pilih Biaya Perawatan<---".equals(biaya))
+            tf_hasilPanen.setText("");
+            tf_harga.setText("");
+        }
+//        else if(panen == 0.0 && harga == 0.0){
+//            lb_hasil.setText("Isi Hasil dan Harga panen!");}
+        
+        else if("--->Pilih Biaya Perawatan<---".equals(biaya)){
             lb_hasil.setText("Pilih biaya Perawatan!");
-        else
-            if("Ada biaya perawatan".equals(biaya))
-                lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.05));
-            else if("Tidak ada biaya perawatan".equals(biaya))
-                lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.010));
+            tf_hasilPanen.setText("");
+            tf_harga.setText("");
+        }else
+            if("Ada biaya perawatan".equals(biaya)){
+                lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.05)+"0");
+                tf_hasilPanen.setText("");
+                tf_harga.setText("");
+            }else if("Tidak ada biaya perawatan".equals(biaya)){
+                lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.010)+"0");
+                tf_hasilPanen.setText("");
+                tf_harga.setText("");
+            }
     }//GEN-LAST:event_btn_hitungActionPerformed
 
     private void tf_hargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_hargaActionPerformed

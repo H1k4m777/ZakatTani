@@ -9,6 +9,8 @@ package zakattani;
  *
  * @author User
  */
+import javax.swing.JOptionPane;
+
 public class cetak_Hasil extends javax.swing.JFrame {
 
     /**
@@ -34,8 +36,9 @@ public class cetak_Hasil extends javax.swing.JFrame {
         tf_hasilPanen = new javax.swing.JTextField();
         tf_harga = new javax.swing.JTextField();
         cb_biaya = new javax.swing.JComboBox<>();
-        btn_hitung = new javax.swing.JToggleButton();
         lb_hasil = new javax.swing.JLabel();
+        btn_reset = new javax.swing.JButton();
+        btn_hsl = new javax.swing.JButton();
 
         jLabel4.setText("jLabel4");
 
@@ -61,7 +64,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
         });
 
         cb_biaya.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        cb_biaya.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--->Pilih Biaya Perawatan<---", "Ada biaya perawatan", "Tidak ada biaya perwatan" }));
+        cb_biaya.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--->Pilih Biaya Perawatan<---", "Ada biaya perawatan", "Tidak ada biaya perawatan" }));
         cb_biaya.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cb_biaya.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,17 +72,23 @@ public class cetak_Hasil extends javax.swing.JFrame {
             }
         });
 
-        btn_hitung.setText("Hitung Zakat");
-        btn_hitung.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_hitung.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_hitungActionPerformed(evt);
-            }
-        });
-
         lb_hasil.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         lb_hasil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_hasil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        btn_reset.setText("Reset");
+        btn_reset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_resetActionPerformed(evt);
+            }
+        });
+
+        btn_hsl.setText("Hitung Zakat");
+        btn_hsl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_hslActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,9 +107,6 @@ public class cetak_Hasil extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(btn_hitung))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(178, 178, 178)
                         .addComponent(jLabel1))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -109,8 +115,13 @@ public class cetak_Hasil extends javax.swing.JFrame {
                             .addComponent(lb_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                             .addGap(149, 149, 149)
-                            .addComponent(cb_biaya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(178, Short.MAX_VALUE))
+                            .addComponent(cb_biaya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addComponent(btn_hsl)
+                        .addGap(117, 117, 117)
+                        .addComponent(btn_reset)))
+                .addContainerGap(144, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,7 +138,9 @@ public class cetak_Hasil extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(cb_biaya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(51, 51, 51)
-                .addComponent(btn_hitung)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn_reset)
+                    .addComponent(btn_hsl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(lb_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(52, 52, 52))
@@ -140,41 +153,6 @@ public class cetak_Hasil extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_hasilPanenActionPerformed
 
-    private void btn_hitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hitungActionPerformed
-        // TODO add your handling code here:
-        double panen = Double.valueOf(tf_hasilPanen.getText().trim());
-        double harga = Double.valueOf(tf_harga.getText().trim());
-        
-        String biaya = (String)cb_biaya.getSelectedItem();
-        
-//        double untung = panen * harga;
-//        
-//        lb_hasil.setText("Rp."+String.valueOf(untung));
-        
-        if(panen < 653){
-            lb_hasil.setText("tidak memenuhi Syarat");
-            tf_hasilPanen.setText("");
-            tf_harga.setText("");
-        }
-//        else if(panen == 0.0 && harga == 0.0){
-//            lb_hasil.setText("Isi Hasil dan Harga panen!");}
-        
-        else if("--->Pilih Biaya Perawatan<---".equals(biaya)){
-            lb_hasil.setText("Pilih biaya Perawatan!");
-            tf_hasilPanen.setText("");
-            tf_harga.setText("");
-        }else
-            if("Ada biaya perawatan".equals(biaya)){
-                lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.05)+"0");
-                tf_hasilPanen.setText("");
-                tf_harga.setText("");
-            }else if("Tidak ada biaya perawatan".equals(biaya)){
-                lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.010)+"0");
-                tf_hasilPanen.setText("");
-                tf_harga.setText("");
-            }
-    }//GEN-LAST:event_btn_hitungActionPerformed
-
     private void tf_hargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_hargaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_hargaActionPerformed
@@ -182,6 +160,43 @@ public class cetak_Hasil extends javax.swing.JFrame {
     private void cb_biayaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_biayaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cb_biayaActionPerformed
+
+    private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed
+        // TODO add your handling code here:
+        tf_hasilPanen.setText("");
+        tf_harga.setText("");
+        lb_hasil.setText("");
+    }//GEN-LAST:event_btn_resetActionPerformed
+
+    private void btn_hslActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hslActionPerformed
+        // TODO add your handling code here:
+        double panen = Double.valueOf(tf_hasilPanen.getText().trim());
+        double harga = Double.valueOf(tf_harga.getText().trim());
+        
+        String biaya = (String)cb_biaya.getSelectedItem();
+        
+        if(tf_harga.getText().equals("") && tf_hasilPanen.getText().equals("") && "--->Pilih Biaya Perawatan<---".equals(biaya)){
+            JOptionPane.showMessageDialog(null, "Isi Hasil panen dan harganya dahulu");
+        }else{       
+            if(panen < 653){
+                lb_hasil.setText("tidak memenuhi Syarat");
+                tf_hasilPanen.setText("");
+                tf_harga.setText("");
+                JOptionPane.showMessageDialog(null, "tidak memenuhi Syarat sah");
+            }
+            else if("--->Pilih Biaya Perawatan<---".equals(biaya)){
+                JOptionPane.showMessageDialog(null, "pilih biaya perawatan dahulu");
+                lb_hasil.setText("");
+            }else
+                if("Ada biaya perawatan".equals(biaya)){
+                    lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.05));
+
+                }else if("Tidak ada biaya perawatan".equals(biaya)){
+                    lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.010));
+
+                }
+            }
+    }//GEN-LAST:event_btn_hslActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,7 +235,8 @@ public class cetak_Hasil extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btn_hitung;
+    private javax.swing.JButton btn_hsl;
+    private javax.swing.JButton btn_reset;
     private javax.swing.JComboBox<String> cb_biaya;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

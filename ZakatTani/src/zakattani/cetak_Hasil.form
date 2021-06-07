@@ -46,10 +46,6 @@
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
-                      <Component id="btn_hitung" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="178" max="-2" attributes="0"/>
                       <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -63,8 +59,14 @@
                           <Component id="cb_biaya" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                      <Component id="btn_hsl" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                      <Component id="btn_reset" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="178" max="32767" attributes="0"/>
+              <EmptySpace pref="144" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -85,7 +87,10 @@
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="cb_biaya" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-              <Component id="btn_hitung" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btn_reset" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btn_hsl" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="81" max="32767" attributes="0"/>
               <Component id="lb_hasil" min="-2" pref="17" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
@@ -131,7 +136,7 @@
           <StringArray count="3">
             <StringItem index="0" value="---&gt;Pilih Biaya Perawatan&lt;---"/>
             <StringItem index="1" value="Ada biaya perawatan"/>
-            <StringItem index="2" value="Tidak ada biaya perwatan"/>
+            <StringItem index="2" value="Tidak ada biaya perawatan"/>
           </StringArray>
         </Property>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
@@ -145,17 +150,6 @@
         <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JToggleButton" name="btn_hitung">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Hitung Zakat"/>
-        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-          <Color id="Hand Cursor"/>
-        </Property>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_hitungActionPerformed"/>
-      </Events>
-    </Component>
     <Component class="javax.swing.JLabel" name="lb_hasil">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -166,6 +160,22 @@
           <Color id="Default Cursor"/>
         </Property>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_reset">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Reset"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_resetActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btn_hsl">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Hitung Zakat"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_hslActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

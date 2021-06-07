@@ -7,9 +7,14 @@ package zakattani;
 
 /**
  *
- * @author User
+ * @hkm
  */
 import javax.swing.JOptionPane;
+
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public class cetak_Hasil extends javax.swing.JFrame {
 
@@ -36,9 +41,9 @@ public class cetak_Hasil extends javax.swing.JFrame {
         tf_hasilPanen = new javax.swing.JTextField();
         tf_harga = new javax.swing.JTextField();
         cb_biaya = new javax.swing.JComboBox<>();
-        lb_hasil = new javax.swing.JLabel();
         btn_reset = new javax.swing.JButton();
         btn_hsl = new javax.swing.JButton();
+        lb_hasil = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
 
@@ -47,8 +52,10 @@ public class cetak_Hasil extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("ZakatTani");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Hasil Panen");
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Harga Panen");
 
         tf_hasilPanen.addActionListener(new java.awt.event.ActionListener() {
@@ -63,7 +70,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
             }
         });
 
-        cb_biaya.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        cb_biaya.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cb_biaya.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--->Pilih Biaya Perawatan<---", "Ada biaya perawatan", "Tidak ada biaya perawatan" }));
         cb_biaya.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cb_biaya.addActionListener(new java.awt.event.ActionListener() {
@@ -72,10 +79,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
             }
         });
 
-        lb_hasil.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lb_hasil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_hasil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
+        btn_reset.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_reset.setText("Reset");
         btn_reset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,6 +87,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
             }
         });
 
+        btn_hsl.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_hsl.setText("Hitung Zakat");
         btn_hsl.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,60 +95,56 @@ public class cetak_Hasil extends javax.swing.JFrame {
             }
         });
 
+        lb_hasil.setFont(new java.awt.Font("Yu Gothic UI Light", 3, 14)); // NOI18N
+        lb_hasil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_hasil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(89, 89, 89)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tf_hasilPanen, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(tf_harga))
-                .addGap(66, 66, 66))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(178, 178, 178)
+                        .addGap(193, 193, 193)
                         .addComponent(jLabel1))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(lb_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(149, 149, 149)
-                            .addComponent(cb_biaya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tf_hasilPanen, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tf_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cb_biaya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(312, Short.MAX_VALUE)
                         .addComponent(btn_hsl)
-                        .addGap(117, 117, 117)
-                        .addComponent(btn_reset)))
-                .addContainerGap(144, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_reset))
+                    .addComponent(lb_hasil, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tf_hasilPanen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tf_harga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addGap(30, 30, 30)
-                .addComponent(cb_biaya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
+                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_reset)
-                    .addComponent(btn_hsl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
-                .addComponent(lb_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
+                    .addComponent(jLabel2)
+                    .addComponent(tf_hasilPanen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_biaya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tf_harga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3)
+                    .addComponent(btn_hsl)
+                    .addComponent(btn_reset))
+                .addGap(83, 83, 83)
+                .addComponent(lb_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         pack();
@@ -170,12 +171,18 @@ public class cetak_Hasil extends javax.swing.JFrame {
 
     private void btn_hslActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hslActionPerformed
         // TODO add your handling code here:
-        double panen = Double.valueOf(tf_hasilPanen.getText().trim());
-        double harga = Double.valueOf(tf_harga.getText().trim());
+        int panen = Integer.valueOf(tf_hasilPanen.getText().trim());
+        int harga = Integer.valueOf(tf_harga.getText().trim());
         
         String biaya = (String)cb_biaya.getSelectedItem();
         
-        if(tf_harga.getText().equals("") && tf_hasilPanen.getText().equals("") && "--->Pilih Biaya Perawatan<---".equals(biaya)){
+        DecimalFormat kursIndonesia = (DecimalFormat) DecimalFormat.getCurrencyInstance();
+        DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
+        formatRp.setCurrencySymbol("Rp. ");
+        formatRp.setMonetaryDecimalSeparator(',');
+        formatRp.setGroupingSeparator('.');
+        
+        if(tf_harga.getText().isEmpty() && tf_hasilPanen.getText().isEmpty() ){
             JOptionPane.showMessageDialog(null, "Isi Hasil panen dan harganya dahulu");
         }else{       
             if(panen < 653){
@@ -188,11 +195,14 @@ public class cetak_Hasil extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "pilih biaya perawatan dahulu");
                 lb_hasil.setText("");
             }else
-                if("Ada biaya perawatan".equals(biaya)){
-                    lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.05));
+                if("Ada biaya perawatan".equals(biaya)){                 
+                    kursIndonesia.setDecimalFormatSymbols(formatRp);
+                    lb_hasil.setText(String.valueOf(kursIndonesia.format(panen*harga*0.05)));
 
                 }else if("Tidak ada biaya perawatan".equals(biaya)){
-                    lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.10));
+                    
+                    kursIndonesia.setDecimalFormatSymbols(formatRp);
+                    lb_hasil.setText(String.valueOf(kursIndonesia.format(panen*harga*0.10)));
 
                 }
             }

@@ -192,7 +192,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
                     lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.05));
 
                 }else if("Tidak ada biaya perawatan".equals(biaya)){
-                    lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.010));
+                    lb_hasil.setText("Rp."+String.valueOf(panen*harga*0.10));
 
                 }
             }

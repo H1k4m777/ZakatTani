@@ -35,6 +35,8 @@ public class cetak_Hasil extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel4 = new javax.swing.JLabel();
+        jScrollBar1 = new javax.swing.JScrollBar();
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -44,31 +46,47 @@ public class cetak_Hasil extends javax.swing.JFrame {
         btn_reset = new javax.swing.JButton();
         btn_hsl = new javax.swing.JButton();
         lb_hasil = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
 
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zakattani/Beras.jpg"))); // NOI18N
+        jLabel5.setText("jLabel5");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("ZakatTani");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(260, 0, 90, 26);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Hasil Panen");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(10, 45, 68, 17);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Harga Panen");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(10, 93, 78, 17);
 
         tf_hasilPanen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_hasilPanenActionPerformed(evt);
             }
         });
+        getContentPane().add(tf_hasilPanen);
+        tf_hasilPanen.setBounds(106, 45, 140, 20);
 
         tf_harga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_hargaActionPerformed(evt);
             }
         });
+        getContentPane().add(tf_harga);
+        tf_harga.setBounds(106, 93, 140, 20);
 
         cb_biaya.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cb_biaya.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--->Pilih Biaya Perawatan<---", "Ada biaya perawatan", "Tidak ada biaya perawatan" }));
@@ -78,6 +96,8 @@ public class cetak_Hasil extends javax.swing.JFrame {
                 cb_biayaActionPerformed(evt);
             }
         });
+        getContentPane().add(cb_biaya);
+        cb_biaya.setBounds(356, 42, 232, 23);
 
         btn_reset.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_reset.setText("Reset");
@@ -86,6 +106,8 @@ public class cetak_Hasil extends javax.swing.JFrame {
                 btn_resetActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_reset);
+        btn_reset.setBounds(521, 91, 67, 23);
 
         btn_hsl.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_hsl.setText("Hitung Zakat");
@@ -94,60 +116,19 @@ public class cetak_Hasil extends javax.swing.JFrame {
                 btn_hslActionPerformed(evt);
             }
         });
+        getContentPane().add(btn_hsl);
+        btn_hsl.setBounds(402, 91, 113, 23);
 
         lb_hasil.setFont(new java.awt.Font("Yu Gothic UI Light", 3, 14)); // NOI18N
         lb_hasil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_hasil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        getContentPane().add(lb_hasil);
+        lb_hasil.setBounds(0, 197, 525, 80);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lb_hasil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(93, 93, 93)
-                            .addComponent(jLabel1))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addGap(402, 402, 402)
-                            .addComponent(btn_hsl)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btn_reset))
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3)
-                                .addComponent(jLabel2))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tf_hasilPanen, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tf_harga, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(cb_biaya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(368, 368, 368)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(tf_hasilPanen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cb_biaya, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tf_harga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(btn_hsl)
-                    .addComponent(btn_reset))
-                .addGap(83, 83, 83)
-                .addComponent(lb_hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zakattani/zakat.jpg"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(0, 0, 600, 290);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -254,6 +235,9 @@ public class cetak_Hasil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JLabel lb_hasil;
     private javax.swing.JTextField tf_harga;
     private javax.swing.JTextField tf_hasilPanen;

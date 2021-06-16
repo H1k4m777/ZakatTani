@@ -34,9 +34,6 @@ public class cetak_Hasil extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
-        jScrollBar1 = new javax.swing.JScrollBar();
-        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -48,12 +45,10 @@ public class cetak_Hasil extends javax.swing.JFrame {
         lb_hasil = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
 
-        jLabel4.setText("jLabel4");
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zakattani/Beras.jpg"))); // NOI18N
-        jLabel5.setText("jLabel5");
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(615, 320));
+        setMinimumSize(new java.awt.Dimension(615, 320));
+        setPreferredSize(new java.awt.Dimension(615, 330));
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -63,11 +58,13 @@ public class cetak_Hasil extends javax.swing.JFrame {
         jLabel1.setBounds(260, 0, 90, 26);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Hasil Panen");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(10, 45, 68, 17);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Harga Panen");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(10, 93, 78, 17);
@@ -234,10 +231,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollBar jScrollBar1;
     private javax.swing.JLabel lb_hasil;
     private javax.swing.JTextField tf_harga;
     private javax.swing.JTextField tf_hasilPanen;

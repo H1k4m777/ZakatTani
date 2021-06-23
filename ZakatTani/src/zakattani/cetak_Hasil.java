@@ -46,9 +46,10 @@ public class cetak_Hasil extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(615, 320));
-        setMinimumSize(new java.awt.Dimension(615, 320));
-        setPreferredSize(new java.awt.Dimension(615, 330));
+        setMaximumSize(new java.awt.Dimension(605, 320));
+        setMinimumSize(new java.awt.Dimension(605, 320));
+        setPreferredSize(new java.awt.Dimension(605, 320));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -75,7 +76,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tf_hasilPanen);
-        tf_hasilPanen.setBounds(106, 45, 140, 20);
+        tf_hasilPanen.setBounds(106, 45, 140, 22);
 
         tf_harga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +84,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tf_harga);
-        tf_harga.setBounds(106, 93, 140, 20);
+        tf_harga.setBounds(106, 93, 140, 22);
 
         cb_biaya.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cb_biaya.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--->Pilih Biaya Perawatan<---", "Ada biaya perawatan", "Tidak ada biaya perawatan" }));

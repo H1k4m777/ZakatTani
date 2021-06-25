@@ -46,6 +46,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("ZakatTani");
         setMaximumSize(new java.awt.Dimension(605, 320));
         setMinimumSize(new java.awt.Dimension(605, 320));
         setPreferredSize(new java.awt.Dimension(605, 320));
@@ -60,15 +61,15 @@ public class cetak_Hasil extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Hasil Panen");
+        jLabel2.setText("Hasil Panen /kg");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 45, 68, 17);
+        jLabel2.setBounds(8, 50, 100, 17);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Harga Panen");
+        jLabel3.setText("Harga Panen Rp");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 93, 78, 17);
+        jLabel3.setBounds(10, 100, 100, 17);
 
         tf_hasilPanen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +77,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tf_hasilPanen);
-        tf_hasilPanen.setBounds(106, 45, 140, 22);
+        tf_hasilPanen.setBounds(115, 45, 150, 30);
 
         tf_harga.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +85,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tf_harga);
-        tf_harga.setBounds(106, 93, 140, 22);
+        tf_harga.setBounds(115, 93, 150, 30);
 
         cb_biaya.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cb_biaya.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--->Pilih Biaya Perawatan<---", "Ada biaya perawatan", "Tidak ada biaya perawatan" }));
@@ -105,7 +106,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_reset);
-        btn_reset.setBounds(521, 91, 67, 23);
+        btn_reset.setBounds(520, 100, 67, 23);
 
         btn_hsl.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btn_hsl.setText("Hitung Zakat");
@@ -115,13 +116,14 @@ public class cetak_Hasil extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btn_hsl);
-        btn_hsl.setBounds(402, 91, 113, 23);
+        btn_hsl.setBounds(360, 100, 113, 23);
 
-        lb_hasil.setFont(new java.awt.Font("Yu Gothic UI Light", 3, 14)); // NOI18N
+        lb_hasil.setFont(new java.awt.Font("Yu Gothic UI Light", 3, 18)); // NOI18N
+        lb_hasil.setForeground(new java.awt.Color(255, 255, 255));
         lb_hasil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_hasil.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         getContentPane().add(lb_hasil);
-        lb_hasil.setBounds(0, 197, 525, 80);
+        lb_hasil.setBounds(0, 197, 600, 80);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zakattani/zakat.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
@@ -129,6 +131,7 @@ public class cetak_Hasil extends javax.swing.JFrame {
         jLabel6.setBounds(0, 0, 600, 290);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void tf_hasilPanenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_hasilPanenActionPerformed

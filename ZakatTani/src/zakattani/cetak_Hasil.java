@@ -147,25 +147,28 @@ public class cetak_Hasil extends javax.swing.JFrame {
     }//GEN-LAST:event_cb_biayaActionPerformed
 
     private void btn_resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_resetActionPerformed
-        // TODO add your handling code here:
+        // reset textfield & label hasil
         tf_hasilPanen.setText("");
         tf_harga.setText("");
         lb_hasil.setText("");
     }//GEN-LAST:event_btn_resetActionPerformed
 
     private void btn_hslActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_hslActionPerformed
-        // TODO add your handling code here:
+        // :mendeklarasikan textfield ke variabel integer 
         int panen = Integer.valueOf(tf_hasilPanen.getText().trim());
         int harga = Integer.valueOf(tf_harga.getText().trim());
         
+        // : mendeklarasikan combo box ke variabel string
         String biaya = (String)cb_biaya.getSelectedItem();
         
+        // : membuat kurs indonesia rupiah
         DecimalFormat kursIndonesia = (DecimalFormat) DecimalFormat.getCurrencyInstance();
         DecimalFormatSymbols formatRp = new DecimalFormatSymbols();
         formatRp.setCurrencySymbol("Rp. ");
         formatRp.setMonetaryDecimalSeparator(',');
         formatRp.setGroupingSeparator('.');
         
+        // : kondisi hasil zakat
         if(tf_harga.getText().isEmpty() && tf_hasilPanen.getText().isEmpty() ){
             JOptionPane.showMessageDialog(null, "Isi Hasil panen dan harganya dahulu");
         }else{       
